@@ -47,11 +47,11 @@ $ npx cypress run --record --spec 'cypress/integration/UserAccount/createUser.sp
 Tests include positive and negative testings. 
 
 1. `createUser.spec.js` contains 
--- Open New Account Test
--- User Login Test
--- Logout Test
+- Open New Account Test
+- User Login Test
+- Logout Test
 2. `userAction.spec.js` contains
--- Account Overview Test
--- Transfer Funds Test
--- Bill Pay Test
--- Find Transaction By Amount Test
+- Account Overview Test
+- Transfer Funds Test
+- Bill Pay Test
+- Find Transaction By Amount Test
