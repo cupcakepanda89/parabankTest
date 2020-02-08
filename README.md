@@ -1,6 +1,10 @@
 # parabankTest
 Test Parabank with Cypress
 
+# need to git clone
+# need to run npm install 
+# need to install faker 
+
 # need to run this the first time 
 npx cypress open
 

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:run": "cypress run",
-    "cy:spec": "npx cypress run --spec"
+    "cy:spec": "cypress run --spec"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "homepage": "https://github.com/cupcakepanda89/parabankTest#readme",
   "devDependencies": {
     "cypress": "^4.0.1"
+  },
+  "dependencies": {
+    "faker": "^4.1.0"
   }
 }
