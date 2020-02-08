@@ -41,16 +41,20 @@ class UserAccount {
 		this.tranctionAmountBtn = 'button[ng-click="criteria.searchType = \'AMOUNT\'"]';
 	}
 
+    /**
+     * login(customer) function to login customer 
+     * @param {Object} customer Object return fake customer data
+     */
 	login(customer) {
 		cy.get(this.username).type(customer.username);
 		cy.get(this.password).type(customer.password);
 		cy.get(this.btn).contains(this.loginBtn).click();
 	}
-
-	logout(url) {
-		cy.visit(`${url}/logout.htm`);
-	}
-
+    
+    /**
+     * register(customer) function to gegister new customer
+     * @param {Object} customer Object return fake customer data
+     */
 	register(customer) {
 		cy.get(this.firstName).type(customer.firstName);
 		cy.get(this.lastName).type(customer.lastName);
@@ -66,24 +70,33 @@ class UserAccount {
 		cy.get(this.btn).contains(this.registerBtn).click();
 	}
 
+    fillField(field, value){
+        cy.get(field).type(value);
+    }
+    
 	/**
-     * 
+     * accountAction(action) function to allow users to take certain actions 
      * @param {String} action Log Out, Accounts Overview, Transfer Funds, Bill Pay, Find Transactions
      */
 	accountAction(action) {
 		cy.get('a').contains(action).click();
 	}
 
-	viewAccount() {
-		cy.get('a').contains('Accounts Overview').click();
-	}
-
+    /**
+     * transferFund(amount) function take in amount param
+     * @param {int} amount to transfer fund 
+     */
 	transferFund(amount) {
 		cy.get(this.transferField).type(amount);
 		cy.get(this.btn).contains(this.trasferBtn).click();
 		cy.wait(500);
 	}
 
+    /**
+     * payBill(payee, amount) take in payee data and amount to payee
+     * @param {Object} payee Object return fake payee data
+     * @param {int} amount 
+     */
 	payBill(payee, amount) {
 		cy.get(this.payeeName).type(payee.name);
 		cy.get(this.payeeAddress).type(payee.address);
@@ -98,6 +111,10 @@ class UserAccount {
 		cy.get(this.btn).contains(this.paymentBtn).click();
 	}
 
+    /**
+     * findTransactionByAmount(amount) to find transaction by amount
+     * @param {Int} amount provide to look up transaction
+     */
 	findTransactionByAmount(amount) {
 		cy.get(this.transactionAmountField).type(amount);
 		cy.get(this.tranctionAmountBtn).click();
