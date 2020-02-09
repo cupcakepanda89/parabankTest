@@ -5,6 +5,7 @@ Test Parabank (Dummy Website) using Cypress.io Automation Test Framework
 
 ```
 $ mkdir CypressTest
+$ cd CypressTest
 $ git clone https://github.com/cupcakepanda89/parabankTest.git
 $ cd parabankTest
 
